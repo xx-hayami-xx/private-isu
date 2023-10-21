@@ -22,7 +22,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/gorilla/sessions"
 	"github.com/jmoiron/sqlx"
-	import _ "net/http/pprof"
+	_ "net/http/pprof"
 )
 
 var (
@@ -793,8 +793,6 @@ func postAdminBanned(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	runtime.SetBlockProfileRate(1)
-    runtime.SetMutexProfileFraction(1)
     go func() {
         log.Println(http.ListenAndServe("0.0.0.0:6060", nil))
     }()
